@@ -122,15 +122,14 @@ nav a {
     right: 0;
   }
 }
-/* TOMBOL KEMBALI */
 .back-btn {
   display: none;
-  margin-top: auto;
+  margin-top: auto;   /* otomatis turun ke posisi paling bawah */
+  padding: 20px;
   font-size: 18px;
   font-weight: bold;
-  padding: 20px;
   cursor: pointer;
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ccc;
 }
 
 @media (max-width: 768px) {
@@ -138,6 +137,7 @@ nav a {
     display: block;
   }
 }
+
 
 /* HERO */
 .hero {
