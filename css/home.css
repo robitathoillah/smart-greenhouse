@@ -58,20 +58,16 @@ nav a {
   border-radius: 5px;
 }
 
-
-/* =====================
-     MOBILE MODE
-===================== */
-/* ANIMASI HAMBURGER JADI X */
 .hamburger span {
   display: block;
   height: 4px;
+  width: 32px;
   background: white;
   border-radius: 4px;
   transition: 0.3s ease;
 }
 
-/* Saat aktif */
+/* Saat aktif → berubah jadi X */
 .hamburger.active span:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
@@ -83,6 +79,10 @@ nav a {
 .hamburger.active span:nth-child(3) {
   transform: translateY(-10px) rotate(-45deg);
 }
+
+/* =====================
+     MOBILE MODE
+===================== */
 
 @media (max-width: 768px) {
 
@@ -120,6 +120,21 @@ nav a {
   /* Buka menu */
   nav.show {
     right: 0;
+  }
+}
+/* TOMBOL KEMBALI */
+.back-btn {
+  display: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  .back-btn {
+    display: block;
   }
 }
 
