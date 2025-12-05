@@ -64,7 +64,8 @@ nav {
 .hero-section {
   width: 100%;
   height: 700px; /* bisa kamu sesuaikan */
-  background-image: url('img/melon2.jpg'); /* ganti dengan gambar kamu */
+  background-image: url('../img/melon2.jpg');
+/* ganti dengan gambar kamu */
   background-size: cover;
   background-position: center;
   position: relative;
