@@ -5,13 +5,13 @@
   box-sizing: border-box;
 }
 
-
 body {
   overflow-x: hidden;
   font-family: Arial, sans-serif;
 }
+
 /* NAVBAR DESKTOP */
-.navbar {
+header {
   width: 100%;
   height: 90px;
   background: #39796e;
@@ -29,61 +29,74 @@ body {
   height: 60px;
 }
 
-/* MENU DESKTOP */
-.nav-menu {
+nav {
   display: flex;
   gap: 30px;
 }
 
-.nav-menu a {
+nav a {
   color: white;
   font-size: 18px;
   text-decoration: none;
   font-family: "Jockey One", sans-serif;
 }
 
+/* HAMBURGER DEFAULT = HILANG DI DESKTOP */
 .hamburger {
+  width: 35px;
+  height: 25px;
   display: none;
+  flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
 }
 
 .hamburger span {
-  width: 28px;
-  height: 3px;
+  width: 100%;
+  height: 4px;
   background: white;
-  margin: 5px 0;
-  transition: 0.3s;
+  border-radius: 5px;
 }
 
-/* MOBILE */
+
+/* =====================
+     MOBILE MODE
+===================== */
 @media (max-width: 768px) {
 
-  .hamburger {
-    display: block;
+  /* Navbar mengecil */
+  header {
+    padding: 0 20px;
   }
 
-  .nav-menu {
+  /* Hamburger muncul */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Menu Mobile */
+  nav {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 65%;
     height: 100vh;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    display: flex;
+    width: 65%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
     flex-direction: column;
     padding-top: 120px;
     padding-left: 40px;
-    gap: 20px;
-    transition: 0.3s;
+    gap: 25px;
+    transition: 0.3s ease-in-out;
   }
 
-  .nav-menu a {
+  nav a {
     color: #333;
-    font-size: 20px;
+    font-size: 22px;
   }
 
-  .nav-menu.show {
+  /* Buka menu */
+  nav.show {
     right: 0;
   }
 }
@@ -259,4 +272,45 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+}
+/* =============================================
+        RESPONSIVE UNTUK SEMUA KONTEN
+============================================= */
+
+@media (max-width: 900px) {
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .info-section,
+  .card,
+  .location-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-img img,
+  .card img,
+  .location-card img {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .info-section,
+  .card-section,
+  .location-section {
+    padding: 40px 20px;
+  }
+
+  .info-text,
+  .card-text,
+  .location-text {
+    padding: 0 10px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 30px;
+  }
 }
