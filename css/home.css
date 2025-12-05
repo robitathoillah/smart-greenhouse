@@ -47,6 +47,53 @@ nav {
   opacity: 0.8;
 }
 
+/* =======================
+   HAMBURGER
+======================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+}
+
+/* =======================
+   RESPONSIVE NAV
+======================= */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 90px;
+    right: 0;
+    width: 200px;
+    background: #39796e;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+  }
+
+  nav a {
+    margin: 15px 0;
+    font-size: 18px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav.show {
+    display: flex;
+  }
+}
+
+
 /* HERO */
 .hero {
   width: 100%;
