@@ -10,7 +10,8 @@ body {
   overflow-x: hidden;
   font-family: Arial, sans-serif;
 }
-header {
+/* NAVBAR DESKTOP */
+.navbar {
   width: 100%;
   height: 90px;
   background: #39796e;
@@ -28,12 +29,13 @@ header {
   height: 60px;
 }
 
-nav {
+/* MENU DESKTOP */
+.nav-menu {
   display: flex;
   gap: 30px;
 }
 
-nav a {
+.nav-menu a {
   color: white;
   font-size: 18px;
   text-decoration: none;
@@ -41,45 +43,47 @@ nav a {
 }
 
 .hamburger {
-  display: none;  /* ← HAMBURGER DISABLE DI DESKTOP */
+  display: none;
+  cursor: pointer;
 }
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
 
-  /* NAVBAR ukuran mobile */
-  header {
-    padding: 0 20px;
-  }
-
-  /* Hamburger muncul */
   .hamburger {
-    display: flex;
+    display: block;
   }
 
-  /* Menu mobile jadi offscreen */
-  nav {
+  .nav-menu {
     position: fixed;
     top: 0;
     right: -100%;
-    height: 100vh;
     width: 65%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
+    height: 100vh;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     padding-top: 120px;
     padding-left: 40px;
     gap: 20px;
-    transition: 0.3s ease;
+    transition: 0.3s;
   }
 
-  /* Warna menu mobile */
-  nav a {
+  .nav-menu a {
     color: #333;
     font-size: 20px;
   }
 
-  /* Saat tombol ditekan */
-  nav.show {
+  .nav-menu.show {
     right: 0;
   }
 }
