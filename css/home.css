@@ -1,0 +1,218 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR (Sama dengan About.css) */
+.navbar {
+  width: 100%;
+  height: 90px;
+  background: #39796e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.logo {
+  height: 60px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: "Jockey One", sans-serif;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  opacity: 0.8;
+}
+
+/* HERO */
+.hero {
+  width: 100%;
+  height: 680px;
+  margin-top: 90px;
+  position: relative;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 160px;
+  left: 80px;
+  color: white;
+}
+
+.hero-text h1 {
+  font-family: "Righteous", sans-serif;
+  font-size: 75px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+}
+
+/* SECTION 1 */
+.info-section {
+  padding: 80px 60px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.info-img img {
+  width: 450px;
+  border-radius: 20px;
+}
+
+.info-text h2 {
+  font-family: "Jockey One", sans-serif;
+  font-size: 40px;
+  color: #39796e;
+  margin-bottom: 15px;
+}
+
+.info-text p {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* SECTION 2 */
+.card-section {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 80%;
+  background: #d4e7dd;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.card img {
+  width: 450px;
+  border-radius: 20px;
+}
+
+.card-text h2 {
+  font-family: "Jockey One", sans-serif;
+  font-size: 36px;
+  color: #39796e;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  background: #39796e;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* SECTION 3 */
+.location-section {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.location-card {
+  width: 80%;
+  background: #d4e7dd;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.location-card img {
+  width: 450px;
+  border-radius: 20px;
+}
+
+.location-text h2 {
+  font-family: "Jockey One", sans-serif;
+  font-size: 36px;
+  color: #39796e;
+  margin-bottom: 10px;
+}
+
+.location-text p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* FOOTER (Sama seperti About.css) */
+.footer {
+  background-color: #39796e;
+  padding: 40px 60px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  max-width: 45%;
+}
+
+.footer-logo {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.footer-title {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.footer-address {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer-social {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-social img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
