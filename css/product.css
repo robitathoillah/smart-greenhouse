@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Righteous', sans-serif;
+  font-family: "Righteous", sans-serif;
   background-color: #f8f8f8;
   padding-top: calc(90px + env(safe-area-inset-top));
 }
@@ -16,7 +16,6 @@ body {
     padding-top: calc(70px + env(safe-area-inset-top));
   }
 }
-
 
 /* ==========================
        HEADER / NAVBAR
@@ -29,33 +28,32 @@ body {
   left: 0;
   width: 100%;
   z-index: 9999;
-
   background-color: #1c6c63;
   padding: 10px 20px;
 
   display: flex;
-  align-items: center;   /* penting: biar logo sejajar */
+  align-items: center; /* penting: biar logo sejajar */
   justify-content: space-between;
-  height: 85px;          /* ❗ kasih tinggi tetap */
+  height: 85px; /* ❗ kasih tinggi tetap */
 }
 
 /* Biar isi konten turun */
 .body-padding {
-  padding-top: 5px;     /* atur sesuai tinggi header kamu */
+  padding-top: 70px; /* atur sesuai tinggi header kamu */
 }
 .after-header {
-    margin-top: 120px;  /* atur sesuai tinggi header kamu */
+  margin-top: 120px; /* atur sesuai tinggi header kamu */
 }
 
 @media (max-width: 768px) {
   header {
     height: 70px;
-    padding: 0 20px;
+    padding: 10 20px;
   }
 }
 
 .logo {
-  height: 55px;          /* ❗ sesuaikan biar pas */
+  height: 55px; /* ❗ sesuaikan biar pas */
   width: auto;
 }
 
@@ -115,7 +113,7 @@ nav a {
     right: -100%;
     width: 65%;
     height: 100vh;
-    background: rgba(255,255,255,0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     flex-direction: column;
     gap: 25px;
@@ -215,7 +213,7 @@ nav a {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
@@ -300,7 +298,6 @@ nav a {
 ========================== */
 
 @media (max-width: 768px) {
-
   .hero-section {
     padding: 40px 20px;
     text-align: center;
