@@ -143,6 +143,11 @@ nav a {
     cursor: pointer;
   }
 }
+@media (max-width: 768px) {
+  .back-btn {
+    display: block !important;
+  }
+}
 
 .back-btn {
   display: none;

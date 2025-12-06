@@ -10,17 +10,26 @@
   <title>Berita</title>
 </head>
 <body>
-  <header class="navbar">
-    <img class="logo" src="img/polijekiri.png"></img>
-    <nav>
+    <header class="navbar">
+      <img class="logo" src="img/polijekiri.png" alt="Logo" />
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav-menu" id="nav-menu">
         <a href="index.html">Home</a>
         <a href="About.html">About</a>
         <a href="berita_page.html">Berita & Kegiatan</a>
         <a href="product.html">Produk</a>
         <a href="learning.html">Learning Page</a>
         <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+
+        <div class="back-btn" id="backBtn">← Kembali</div>
+      </nav>
+    </header>
 
   <section class="hero">
     <img src="img/tefaberita.jpg" class="hero-img" alt="Hero" />
@@ -38,7 +47,7 @@
     <div class="main-news">
       <img src="img/mainberita.jpg" alt="Main news" />
       <h3 class="stoke">POLIJE DAN PT EWINDO GELAR TANAM PERDANA BENIH MELON DI SMART GREEN HOUSE</h3>
-      <button class="readmore">read more</button>
+    
     </div>
 
     <div class="sub-news">
@@ -62,7 +71,7 @@
 
 <footer class="footer">
   <div class="footer-left">
-    <img src="polijekiri.png" alt="Polije Logo" class="footer-logo">
+    <img src="img/polijekiri.png" alt="Polije Logo" class="footer-logo">
 
     <h2 class="footer-title">Smart Green<br>House Polije</h2>
 
@@ -84,5 +93,6 @@
   </div>
 </footer>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
