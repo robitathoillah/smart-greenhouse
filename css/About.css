@@ -1,73 +1,84 @@
-/* =====================================================
-   RESET
-===================================================== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
-
-/* =====================================================
-   BASE
-===================================================== */
-body{
-  font-family: "Righteous", Arial, sans-serif;
-  background: #f8f8f8;
-  color: #123631;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-top: 90px; /* ruang untuk header fixed */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* =====================================================
-   NAVBAR
-===================================================== */
-header.navbar{
-  position: fixed;
-  top: 0; left: 0;
+body {
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR DESKTOP */
+header {
   width: 100%;
   height: 90px;
   background: #39796e;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 32px;
-  z-index: 1100;
-  gap: 16px;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-.logo{ height: 60px; display:block; }
+.logo {
+  height: 60px;
+}
 
-/* desktop nav */
-header.navbar nav{
+nav {
   display: flex;
-  gap: 26px;
-  align-items: center;
-}
-header.navbar nav a{
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 18px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.12);
+  gap: 30px;
 }
 
-/* Hamburger */
-.hamburger{
+nav a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: "Jockey One", sans-serif;
+}
+
+/* HAMBURGER DEFAULT = HILANG DI DESKTOP */
+.hamburger {
+  width: 35px;
+  height: 25px;
   display: none;
-  cursor: pointer;
-  width: 36px;
-  height: 28px;
   flex-direction: column;
   justify-content: space-between;
-}
-.hamburger span{
-  display:block;
-  height:4px;
-  background:#fff;
-  border-radius:4px;
-}
-.hamburger {
-  z-index: 1200;
+  cursor: pointer;
 }
 
+.hamburger span {
+  width: 100%;
+  height: 4px;
+  background: white;
+  border-radius: 5px;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 32px;
+  background: white;
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+/* Saat aktif → berubah jadi X */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
 
 /* Mobile Nav (off-canvas) */
 .nav-menu-mobile{
