@@ -1,172 +1,204 @@
-/* ======================
-   RESET
-====================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* About.css - bersih & responsif */
+
+/* RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+/* BASE */
+body{
+  font-family: "Righteous", Arial, sans-serif;
+  background: #f8f8f8;
+  color: #123631;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* beri ruang supaya konten tidak tertutup header yang fixed */
+  padding-top: 90px;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
-  background: #ffffff;
-  padding-top: 100px; /* supaya tidak ketabrak navbar */
-}
-
-/* ======================
-   NAVBAR
-====================== */
-.navbar {
+/* NAVBAR */
+header.navbar{
+  position: fixed;
+  top: 0; left: 0;
   width: 100%;
   height: 90px;
   background: #39796e;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
+  padding: 0 32px;
+  z-index: 1100;
+  gap: 16px;
 }
+.logo{ height: 60px; display:block; }
 
-.logo {
-  height: 60px;
-}
-
-/* HAMBURGER */
-.hamburger {
-  width: 35px;
-  height: 25px;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.hamburger span {
-  height: 4px;
-  width: 100%;
-  background: white;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-/* NAV MENU */
-.nav-menu {
+/* nav desktop */
+header.navbar nav{
   display: flex;
+  gap: 26px;
   align-items: center;
-  gap: 28px;
 }
-
-.nav-menu a {
-  color: white;
-  font-family: "Jockey One", sans-serif;
-  font-size: 18px;
+header.navbar nav a{
+  color: #fff;
   text-decoration: none;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
-
-/* TOMBOL KEMBALI (mobile) */
-.back-btn {
-  display: none;
-  width: 100%;
-  padding: 15px;
-  text-align: center;
-  color: white;
-  background: #2e5f55;
+  font-weight: 700;
   font-size: 18px;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  margin-top: 20px;
-  border-radius: 0 0 10px 10px;
-  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.12);
 }
 
-/* ======================
-   HERO
-====================== */
-.hero-about {
+/* HAMBURGER (dipakai di mobile) */
+.hamburger{ display: none; cursor: pointer; width:36px; height:28px; flex-direction:column; justify-content:space-between; }
+.hamburger span{ display:block; height:4px; background:#fff; border-radius:4px; }
+
+/* HERO / header image */
+.hero-about{
   position: relative;
   width: 100%;
-  height: 550px;
+  height: 420px;
   overflow: hidden;
+  background: linear-gradient(180deg,#157865 10%,#2aa67e 100%);
 }
-
-.hero-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.hero-about .hero-bg{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.95;
 }
-
-.hero-title {
-  font-family: "Righteous", sans-serif;
-  font-size: 120px;
-  color: white;
+.hero-title{
   position: absolute;
-  bottom: 50px;
-  left: 50px;
-  text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+  left: 40px;
+  bottom: 48px;
+  color: #fff;
+  font-size: 56px;
+  line-height: 1;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.25);
+  font-family: "Righteous", sans-serif;
 }
 
-/* ======================
-   CONTENT
-====================== */
-.content-section {
+/* CONTENT */
+.content-section{
   width: 100%;
-  max-width: 1400px;
-  margin: 80px auto;
-  padding: 0 40px;
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 20px;
 }
-
-.section-title {
+.section-title{
   font-family: "Jockey One", sans-serif;
-  font-size: 40px;
+  font-size: 34px;
   color: #39796e;
-  margin-bottom: 25px;
+  margin-bottom: 16px;
 }
-
-.content-box {
-  background: #d4e7dd;
-  padding: 40px;
-  border-radius: 20px;
-  font-size: 20px;
+.content-box{
+  background: #dfeee6;
+  padding: 26px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  color: #123631;
+  font-size: 18px;
   line-height: 1.7;
-  color: #2f4f4f;
 }
 
-/* ======================
-   FOOTER
-====================== */
-.footer {
+/* spacing between sections */
+.content-section + .content-section { margin-top: 28px; }
+
+/* FOOTER */
+.footer{
   background: #39796e;
-  padding: 40px 60px;
-  color: white;
+  color: #fff;
+  padding: 36px 24px;
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   flex-wrap: wrap;
+}
+.footer-left{ max-width: 60%; }
+.footer-logo{ width: 160px; display:block; margin-bottom:12px; }
+.footer-title{ font-size:20px; margin-bottom:8px; }
+.footer-address{ font-size:15px; line-height:1.6; }
+
+/* RESPONSIVE */
+/* tablet */
+@media (max-width: 1024px){
+  .hero-about{ height: 360px; }
+  .hero-title{ font-size:44px; left:30px; bottom:36px; }
+  .section-title{ font-size:30px; }
+  .content-box{ font-size:17px; padding:22px; }
+  body{ padding-top:80px; }
+}
+
+/* mobile */
+@media (max-width: 768px){
+  /* header smaller, and show hamburger */
+  header.navbar{ height:70px; padding: 10px 18px; align-items:center; }
+  .logo{ height:48px; }
+
+  .hamburger{ display:flex; }
+  header.navbar nav{ display:none; } /* hide desktop nav on mobile */
+
+  /* off-canvas nav (JS will toggle .show) */
+  .nav-menu-mobile{
+    position: fixed;
+    top:0; right:-100%;
+    width:78%;
+    max-width:360px;
+    height:100vh;
+    background: rgba(255,255,255,0.97);
+    padding: 110px 20px 20px 28px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    transition: right .28s ease;
+    z-index:1090;
+  }
+  .nav-menu-mobile.show{ right:0; }
+  .nav-menu-mobile a{ color:#223; font-size:20px; font-weight:700; text-decoration:none; }
+
+  /* hero smaller */
+  .hero-about{ height:300px; }
+  .hero-title{ font-size:34px; left:20px; bottom:26px; }
+
+  .content-section{ padding: 0 18px; margin: 20px auto; }
+  .section-title{ font-size:24px; }
+
+  .footer{ padding:28px 18px; text-align:center; flex-direction:column; align-items:center; }
+  .footer-left{ max-width:100%; text-align:center; }
+  body{ padding-top:70px; }
+}
+
+/* small phones */
+@media (max-width: 440px){
+  .hero-about{ height:260px; }
+  .hero-title{ font-size:28px; }
+  .content-box{ font-size:15px; }
+}
+/* FOOTER */
+.footer {
+  background: #39796e;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
 }
 
 .footer-left {
-  max-width: 45%;
+  max-width: 300px;
 }
 
 .footer-logo {
-  width: 150px;
-  margin-bottom: 20px;
+  width: 120px;
+  margin-bottom: 10px;
 }
 
 .footer-title {
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 28px;
+  margin: 10px 0;
+  line-height: 1.2;
 }
 
 .footer-address {
   font-size: 16px;
-  margin-top: 10px;
   line-height: 1.6;
 }
 
+/* SOSMED SECTION */
 .footer-right {
   display: flex;
   align-items: center;
@@ -174,122 +206,25 @@ body {
 
 .footer-social {
   display: flex;
-  gap: 18px;
+  gap: 15px;
 }
 
 .footer-social img {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
-/* ======================
-   RESPONSIVE
-====================== */
-
-/* Tablet */
-@media (max-width: 1024px) {
-  body {
-    padding-top: 110px;
-  }
-
-  .hero-title {
-    font-size: 90px;
-    left: 40px;
-  }
-
-  .content-box {
-    font-size: 18px;
-    padding: 30px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  
-  body {
-    padding-top: 150px; /* navbar lebih tinggi */
-  }
-
-  .navbar {
-    height: auto;
-    padding: 20px;
-    flex-direction: row;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-menu {
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width: 100%;
-    background: #39796e;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px 0;
-    display: none; /* hidden default */
-  }
-
-  .nav-menu.show {
-    display: flex;
-  }
-
-  .nav-menu a {
-    font-size: 18px;
-  }
-
-  .back-btn {
-    display: block;
-  }
-
-  /* HERO */
-  .hero-about {
-    height: 380px;
-  }
-
-  .hero-title {
-    font-size: 55px;
-    left: 20px;
-    bottom: 20px;
-  }
-
-  .content-section {
-    padding: 0 20px;
-    margin: 60px auto;
-  }
-
-  .section-title {
-    font-size: 28px;
-  }
-
-  .content-box {
-    padding: 25px;
-    font-size: 16px;
-  }
-
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
   .footer {
-    padding: 40px 20px;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  body {
-    padding-top: 160px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .hero-title {
-    font-size: 40px;
-  }
-
-  .section-title {
-    font-size: 24px;
-  }
-
-  .content-box {
-    font-size: 14px;
+  .footer-right {
+    justify-content: center;
   }
 }
