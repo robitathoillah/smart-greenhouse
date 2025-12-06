@@ -21,38 +21,49 @@
     <link rel="stylesheet" href="css/product.css" />
   </head>
 
-  <body>
-    <!-- NAVBAR -->
+  <body class="body-padding">
     <header class="navbar">
       <img class="logo" src="img/polijekiri.png" alt="Logo" />
-      <nav>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav-menu" id="nav-menu">
         <a href="index.html">Home</a>
         <a href="About.html">About</a>
         <a href="berita_page.html">Berita & Kegiatan</a>
         <a href="product.html">Produk</a>
         <a href="learning.html">Learning Page</a>
         <a href="contact.html">Contact</a>
+
+        <!-- TOMBOL KEMBALI DI PALING BAWAH -->
+        <div class="back-btn" id="backBtn">← Kembali</div>
       </nav>
     </header>
 
     <!-- HERO -->
-    <section class="hero-section">
-      <div class="container hero-wrapper">
-        <div class="hero-left">
-          <h1 class="hero-title">TeFa Smart Green House</h1>
+    <section class="after-header">
+      <section class="hero-section">
+        <div class="container hero-wrapper">
+          <div class="hero-left">
+            <h1 class="hero-title">TeFa Smart Green House</h1>
 
-          <div class="mini-gallery">
-            <img src="img/produk.jpg" alt="" />
-            <img src="img/produk1.jpg" alt="" />
-            <img src="img/produk2.jpg" alt="" />
-            <img src="img/produk3.jpg" alt="" />
+            <div class="mini-gallery">
+              <img src="img/produk.jpg" alt="" />
+              <img src="img/produk1.jpg" alt="" />
+              <img src="img/produk2.jpg" alt="" />
+              <img src="img/produk3.jpg" alt="" />
+            </div>
+          </div>
+
+          <div class="product-bubble">
+            <h3 class="bubble-text">Product<br />Premium</h3>
           </div>
         </div>
-
-        <div class="product-bubble">
-          <h3 class="bubble-text">Product<br />Premium</h3>
-        </div>
-      </div>
+      </section>
     </section>
 
     <!-- PRODUK GRID -->
@@ -61,16 +72,15 @@
         <div class="row g-4 justify-content-center">
           <div class="col-10 col-md-4">
             <a href="description.html" class="product-link">
-               <div class="product-card">
-    <img src="img/produk.jpg" class="product-img" />
-    <div class="product-info">
-      <p>Nama Produk</p>
-      <p class="text-muted">Harga</p>
-    </div>
-  </div>
-</a>
- </div>
-
+              <div class="product-card">
+                <img src="img/produk.jpg" class="product-img" />
+                <div class="product-info">
+                  <p>Nama Produk</p>
+                  <p class="text-muted">Harga</p>
+                </div>
+              </div>
+            </a>
+          </div>
 
           <div class="col-10 col-md-4">
             <div class="product-card">
@@ -92,7 +102,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -120,5 +129,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>

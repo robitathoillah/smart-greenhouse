@@ -17,15 +17,26 @@
 
 <body>
 
-  <header class="navbar">
-    <img class="logo" src="img/polijekiri.png" alt="Logo">
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="berita_page.html">Berita & Kegiatan</a>
-        <a href="product.html">Produk</a>
-        <a href="learning.html">Learning Page</a>
-        <a href="contact.html">Contact</a>
+<header class="navbar">
+  <img class="logo" src="img/polijekiri.png" alt="Logo" />
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="nav-menu" id="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="berita_page.html">Berita & Kegiatan</a>
+    <a href="product.html">Produk</a>
+    <a href="learning.html">Learning Page</a>
+    <a href="contact.html">Contact</a>
+        
+      <!-- TOMBOL KEMBALI DI PALING BAWAH -->
+  <div class="back-btn" id="backBtn">← Kembali</div>
+
     </nav>
   </header>
 
@@ -97,7 +108,6 @@
     <img src="img/polijekiri.png" alt="Polije Logo" class="footer-logo">
 
     <h2 class="footer-title">Smart Green<br>House Polije</h2>
-
     <p class="footer-address">
       Jl. Mastrip, Krajan Timur, Sumbersari,<br>
       Kec. Sumbersari, Kabupaten Jember,<br>
@@ -129,17 +139,8 @@
   });
 </script>
 
-<script>
-  const navToggle = document.getElementById("navToggle");
-  const navMenu = document.querySelector(".nav-menu");
-
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-  });
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
 
-</body>
-</html>

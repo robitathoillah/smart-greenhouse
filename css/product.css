@@ -1,26 +1,62 @@
-/* FONT */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY — beri ruang agar tidak tertutup header */
 body {
   font-family: 'Righteous', sans-serif;
   background-color: #f8f8f8;
+  padding-top: 90px; /* sesuai tinggi header */
 }
 
-/* NAVBAR */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* header mobile lebih kecil */
+  }
+}
+
+/* ==========================
+       HEADER / NAVBAR
+========================== */
+
+/* HEADER FIXED */
 .navbar {
-  width: 100%;
-  height: 90px;
-  background: #39796e;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  width: 100%;
+  z-index: 9999;
+
+  background-color: #1c6c63;
+  padding: 10px 20px;
+
+  display: flex;
+  align-items: center;   /* penting: biar logo sejajar */
+  justify-content: space-between;
+  height: 80px;          /* ❗ kasih tinggi tetap */
+}
+
+/* Biar isi konten turun */
+.body-padding {
+  padding-top: 5px;     /* atur sesuai tinggi header kamu */
+}
+.after-header {
+    margin-top: 120px;  /* atur sesuai tinggi header kamu */
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+    padding: 0 20px;
+  }
 }
 
 .logo {
-  height: 60px;
+  height: 55px;          /* ❗ sesuaikan biar pas */
+  width: auto;
 }
 
 nav {
@@ -28,20 +64,95 @@ nav {
   gap: 30px;
 }
 
-.navbar a {
+nav a {
   color: white;
   font-size: 18px;
   text-decoration: none;
   font-family: "Jockey One", sans-serif;
 }
 
-.navbar a:hover {
-  opacity: 0.8;
+/* ==========================
+       HAMBURGER MENU
+========================== */
+.hamburger {
+  width: 35px;
+  height: 25px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
-/* HERO SECTION */
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 65%;
+    height: 100vh;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    flex-direction: column;
+    gap: 25px;
+    padding-left: 40px;
+    padding-top: 120px;
+    transition: 0.3s ease-in-out;
+  }
+
+  nav.show {
+    right: 0;
+  }
+
+  nav a {
+    color: #333;
+    font-size: 22px;
+  }
+
+  .back-btn {
+    display: block;
+    margin-top: auto;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+  }
+}
+
+.back-btn {
+  display: none;
+}
+
+/* ==========================
+       HERO SECTION
+========================== */
+
 .hero-section {
-  margin-top: 90px;
   padding: 80px 0;
   background: linear-gradient(#157865, #2aa67e);
   color: white;
@@ -71,7 +182,10 @@ nav {
   border-radius: 12px;
 }
 
-/* BUBBLE */
+/* ==========================
+          BUBBLE
+========================== */
+
 .product-bubble {
   width: 260px;
   height: 260px;
@@ -88,19 +202,22 @@ nav {
   font-weight: 800;
 }
 
-/* PRODUCT GRID */
+/* ==========================
+        PRODUCT GRID
+========================== */
+
 .product-card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-   width: 100%;
+  width: 100%;
 }
 
 .product-img {
+  width: 100%;
   height: 250px;
   object-fit: cover;
-  width: 100%;
 }
 
 .product-info {
@@ -112,36 +229,33 @@ nav {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: none;
-  font-size: 22px;
   background: #d7f0e6;
+  border: none;
   cursor: pointer;
-}
-
-.arrow-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
+  font-size: 22px;
   color: black;
 }
+
 .product-link {
   display: block;
   width: 100%;
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
+/* ==========================
+            FOOTER
+========================== */
 
-
-/* FOOTER */
 .footer {
-  background-color: #39796e;
+  background: #39796e;
   padding: 40px 60px;
   color: white;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   flex-wrap: wrap;
 }
 
@@ -174,4 +288,55 @@ nav {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+}
+
+/* ==========================
+      MOBILE RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+
+  .hero-section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .mini-gallery img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .product-bubble {
+    width: 180px;
+    height: 180px;
+  }
+
+  .bubble-text {
+    font-size: 18px;
+  }
+
+  .product-img {
+    height: 180px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .footer-right {
+    justify-content: center;
+    width: 100%;
+  }
 }
