@@ -5,18 +5,18 @@
   box-sizing: border-box;
 }
 
-/* BODY — beri ruang agar tidak tertutup header */
 body {
   font-family: 'Righteous', sans-serif;
   background-color: #f8f8f8;
-  padding-top: 90px; /* sesuai tinggi header */
+  padding-top: calc(90px + env(safe-area-inset-top));
 }
 
 @media (max-width: 768px) {
   body {
-    padding-top: 70px; /* header mobile lebih kecil */
+    padding-top: calc(70px + env(safe-area-inset-top));
   }
 }
+
 
 /* ==========================
        HEADER / NAVBAR
