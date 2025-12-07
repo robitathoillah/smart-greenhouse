@@ -1,0 +1,201 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  padding-top: 90px; /* HEADER FIXED */
+}
+
+/* ============================
+   GLOBAL NAVBAR (DESKTOP)
+============================ */
+header {
+  width: 100%;
+  height: 90px;
+  background: #1c6c63;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: "Jockey One", sans-serif;
+}
+
+/* ============================
+   HAMBURGER
+============================ */
+.hamburger {
+  width: 35px;
+  height: 25px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 4px;
+  background: white;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+/* ACTIVE → X */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ============================
+   MOBILE NAV
+============================ */
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .logo {
+    height: 48px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 65%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    flex-direction: column;
+    padding-top: 120px;
+    padding-left: 40px;
+    gap: 25px;
+    transition: 0.3s ease-in-out;
+  }
+
+  nav a {
+    color: #333;
+    font-size: 22px;
+  }
+
+  nav.show {
+    right: 0;
+  }
+}
+
+/* BUTTON KEMBALI MOBILE */
+.back-btn {
+  display: none;
+  margin-top: auto;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #123631;
+}
+
+@media (max-width: 768px) {
+  .back-btn {
+    display: block;
+  }
+}
+
+/* ============================
+   FOOTER GLOBAL
+============================ */
+.footer {
+  background: #39796e;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-left {
+  max-width: 350px;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 12px;
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-address {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Social Icons */
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-social {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-social img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  transition: .2s;
+}
+
+.footer-social img:hover {
+  transform: scale(1.15);
+}
+
+/* RESPONSIVE FOOTER */
+@media(max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}

@@ -11,34 +11,38 @@
       href="https://fonts.googleapis.com/css2?family=Righteous&family=Jockey+One&display=swap"
       rel="stylesheet"
     />
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="css/main.css" />
 
+    <!-- CSS KHUSUS HALAMAN CONTACT -->
     <link rel="stylesheet" href="css/home.css" />
-    <title>Home – Smart Green House</title>
   </head>
+
   <body>
+    <!-- ============================
+           NAVBAR GLOBAL
+============================= -->
+    <header>
+      <img class="logo" src="img/polijekiri.png" alt="Logo" />
 
-<header class="navbar">
-  <img class="logo" src="img/polijekiri.png" alt="Logo" />
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+      <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="berita_page.html">Berita & Kegiatan</a>
+        <a href="product.html">Produk</a>
+        <a href="learning.html">Learning Page</a>
+        <a href="contact.html">Contact</a>
 
-  <nav class="nav-menu" id="nav-menu">
-    <a href="index.html">Home</a>
-    <a href="About.html">About</a>
-    <a href="berita_page.html">Berita & Kegiatan</a>
-    <a href="product.html">Produk</a>
-    <a href="learning.html">Learning Page</a>
-    <a href="contact.html">Contact</a>
-        
-      <!-- TOMBOL KEMBALI DI PALING BAWAH -->
-  <div class="back-btn" id="backBtn">← Kembali</div>
-  
-  </nav>
-</header>
+        <!-- TOMBOL KEMBALI (KHUSUS MOBILE) -->
+        <div class="back-btn" id="backBtn">← Kembali</div>
+      </nav>
+    </header>
 
     <!-- HERO -->
     <section class="hero">
@@ -110,14 +114,12 @@
         <div class="footer-social">
           <img src="img/whatsApp.jpg" alt="" />
           <img src="img/facebook.jpg" alt="" />
-          <img src="img/twitter.jpg" alt="" />
-          <img src="img/pesan.jpg" alt="" />
           <img src="img/instagram.jpg" alt="" />
         </div>
       </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>
  

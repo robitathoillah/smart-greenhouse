@@ -10,138 +10,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* NAVBAR DESKTOP */
-header {
-  width: 100%;
-  height: 90px;
-  background: #1c6c63;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-.logo {
-  height: 60px;
-}
-
-nav {
-  display: flex;
-  gap: 30px;
-}
-
-nav a {
-  color: white;
-  font-size: 18px;
-  text-decoration: none;
-  font-family: "Jockey One", sans-serif;
-}
-
-/* HAMBURGER DEFAULT = HILANG DI DESKTOP */
-.hamburger {
-  width: 35px;
-  height: 25px;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 100%;
-  height: 4px;
-  background: white;
-  border-radius: 5px;
-}
-
-.hamburger span {
-  display: block;
-  height: 4px;
-  width: 32px;
-  background: white;
-  border-radius: 4px;
-  transition: 0.3s ease;
-}
-
-/* Saat aktif → berubah jadi X */
-.hamburger.active span:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
-}
-
-/* =====================
-     MOBILE MODE
-===================== */
-
-@media (max-width: 768px) {
-
-  /* Navbar mengecil */
-  header {
-    padding: 0 20px;
-  }
-
-  /* Hamburger muncul */
-  .hamburger {
-    display: flex;
-  }
-
-  /* Menu Mobile */
-  nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 65%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
-    flex-direction: column;
-    padding-top: 120px;
-    padding-left: 40px;
-    gap: 25px;
-    transition: 0.3s ease-in-out;
-  }
-
-  nav a {
-    color: #333;
-    font-size: 22px;
-  }
-
-  /* Buka menu */
-  nav.show {
-    right: 0;
-  }
-}
-.back-btn {
-  display: none;
-  margin-top: auto;   /* otomatis turun ke posisi paling bawah */
-  padding: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  border-top: 1px solid #ccc;
-}
-
-@media (max-width: 768px) {
-  .back-btn {
-    display: block;
-  }
-}
-
 /* Hero Section */
 .hero-section {
   width: 100%;
-  height: 700px; /* bisa kamu sesuaikan */
+  min-height: 60vh;
   background-image: url('../img/melon2.jpg');
 /* ganti dengan gambar kamu */
   background-size: cover;
@@ -158,6 +30,17 @@ nav a {
   inset: 0;
   background-color: rgba(0, 0, 0, 0.4); /* gelapkan sedikit */
 }
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 45vh;        /* lebih kecil di HP */
+    padding-left: 20px;
+  }
+
+  .hero-title {
+    font-size: 32px;         /* biar pas di HP */
+  }
+}
+
 
 /* Teks di atas gambar */
 .hero-title {
@@ -216,73 +99,83 @@ nav a {
   font-weight: 700;
   color: #1a1a1a;
 }
-/* LAYER KEMITRAAN (awalnya disembunyikan) */
+/* =======================
+   POPUP KEMITRAAN (SMOOTH)
+   ======================= */
+/* =======================
+   POPUP KEMITRAAN — FAST & SMOOTH
+   ======================= */
 .kemitraan-layer {
   position: fixed;
-  top: 0;
-  right: -100%;          /* nanti digeser masuk */
-  width: 100%;
-  height: 100vh;
-  background: #ffffff;
-  padding: 60px 20px;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
   display: flex;
   justify-content: center;
-  align-items: start;
-  overflow-y: auto;
-  transition: 0.5s ease;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease-out;  /* cepat & smooth */
   z-index: 9999;
 }
-
-.kemitraan-layer.active {
-  right: 0; /* slide masuk */
-}
-
-.kemitraan-content {
-  max-width: 900px;
-}
-
-/* judul */
-.kemitraan-title {
-  font-size: 48px;
-  font-weight: 800;
-  color: #0a3e35;
-  margin-bottom: 25px;
-}
-
-/* paragraf pendek */
+/* Tengahkan judul & sub judul */
+.kemitraan-title,
 .kemitraan-sub {
-  font-size: 20px;
-  color: #2b2b2b;
-  margin-bottom: 35px;
+  text-align: center;
 }
 
-/* list */
-.kemitraan-list h3 {
-  color: #0b7261;
-  font-size: 24px;
-  margin-top: 25px;
+/* List tetap rata kiri dan rapi */
+.kemitraan-list {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 500px; /* supaya tidak melebar di tengah */
 }
-
 .kemitraan-list ul {
-  margin: 10px 0 20px 20px;
-  font-size: 18px;
+  padding-left: 20px;
   line-height: 1.6;
 }
 
+.kemitraan-layer.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.kemitraan-content {
+  background: white;
+  width: 90%;
+  max-width: 750px;
+  padding: 40px 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+  transform: scale(0.85);       /* kecil sedikit */
+  opacity: 0;                   /* hilang dulu */
+  transition:
+    transform 0.22s cubic-bezier(.21,1.02,.73,1),
+    opacity 0.22s ease-out;     /* sangat smooth */
+}
+
+.kemitraan-layer.active .kemitraan-content {
+  transform: scale(1);          /* pop up cepat */
+  opacity: 1;
+}
+
+/* Tombol kembali */
 .btn-kembali {
-  margin-top: 30px;
+  margin-top: 25px;
   background: #0b7261;
-  color: white;
-  padding: 12px 28px;
-  border-radius: 12px;
+  color: #fff;
   border: none;
-  font-size: 18px;
+  padding: 12px 30px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 18px;
+  transition: background 0.2s ease;
 }
 
 .btn-kembali:hover {
   background: #09584b;
 }
+
 
 /* Icon WA & IG */
 .icon-list {
@@ -309,171 +202,4 @@ nav a {
 
 .footer-divider {
   outline: 4px solid white;
-}
-
-
-
-/* Footer container */
-.footer {
-  background-color: #39796e; /* hijau seperti di gambar */
-  padding: 40px 60px;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-/* Bagian kiri */
-.footer-left {
-  max-width: 45%;
-}
-
-.footer-logo {
-  width: 180px;
-  margin-bottom: 20px;
-}
-
-.footer-title {
-  font-size: 32px;
-  font-weight: 800;
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.footer-address {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #f0f0f0;
-}
-
-/* Bagian kanan (social icons) */
-.footer-right {
-  display: flex;
-  align-items: center;
-}
-
-.footer-social {
-  display: flex;
-  gap: 18px;
-}
-
-.footer-social img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-}
-
-/* LAYER KEMITRAAN - RESPONSIVE CLEAN VERSION */
-.kemitraan-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0,0,0,0.8);
-  display: none; 
-  justify-content: center;
-  align-items: center;
-  padding: 20px;              /* bikin aman di HP */
-  z-index: 9999;
-}
-
-/* Saat aktif */
-.kemitraan-layer.active {
-  display: flex;
-}
-
-/* BOX ISI */
-.kemitraan-content {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 680px;          /* optimal untuk laptop */
-  max-height: 90vh;
-  overflow-y: auto;
-  animation: fadeIn 0.3s ease;
-}
-
-/* Judul */
-.kemitraan-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #0a3e35;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Sub */
-.kemitraan-sub {
-  font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-/* List */
-.kemitraan-list h3 {
-  font-size: 1.3rem;
-  color: #0b7261;
-  margin-top: 18px;
-}
-
-.kemitraan-list ul {
-  margin-left: 20px;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Tombol kembali */
-.btn-kembali {
-  margin-top: 25px;
-  padding: 12px 24px;
-  background: #0b7261;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  width: 100%;
-}
-
-.btn-kembali:hover {
-  background: #09584b;
-}
-
-/* Animasi */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* RESPONSIVE HP */
-@media (max-width: 480px) {
-
-  .kemitraan-content {
-    padding: 20px;
-  }
-
-  .kemitraan-title {
-    font-size: 1.9rem;
-  }
-
-  .kemitraan-sub {
-    font-size: 1rem;
-  }
-
-  .kemitraan-list h3 {
-    font-size: 1.1rem;
-  }
-
-  .kemitraan-list ul {
-    font-size: 0.95rem;
-  }
-
-  .btn-kembali {
-    font-size: 1rem;
-  }
 }
