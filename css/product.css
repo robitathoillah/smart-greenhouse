@@ -115,3 +115,35 @@ body {
   color: inherit;
 }
 
+/* ======== MOBILE FIX (max 768px) ======== */
+@media (max-width: 768px) {
+
+  .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .mini-gallery {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .mini-gallery img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .product-bubble {
+    width: 180px;
+    height: 180px;
+  }
+
+  .bubble-text {
+    font-size: 18px;
+  }
+}
