@@ -110,4 +110,9 @@ body {
     background: var(--green-primary);
     color: white;
 }
-
+.product-detail-card,
+.content-box {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;  /* auto = bikin center */
+}
