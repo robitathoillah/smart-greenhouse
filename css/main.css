@@ -177,19 +177,21 @@ nav a {
 
 .footer-social {
   display: flex;
-  gap: 18px;
+  gap: 15px;
+  align-items: center;
 }
 
 .footer-social img {
-  width: 45px;
-  height: 45px;
-  object-fit: cover;
-  transition: .2s;
+  width: 35px;
+  transition: .3s;
+  cursor: pointer;
 }
 
 .footer-social img:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
+  opacity: .8;
 }
+
 
 /* RESPONSIVE FOOTER */
 @media(max-width: 768px) {
