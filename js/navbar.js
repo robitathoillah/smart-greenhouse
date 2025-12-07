@@ -16,15 +16,26 @@ if (backBtn) {
   });
 }
 
-// SCROLL REVEAL
+// REVEAL EFFECT - SMOOTH & ELEGANT
 const reveals = document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+function revealOnScroll() {
+  for (let i = 0; i < reveals.length; i++) {
+    let windowHeight = window.innerHeight;
+    let revealTop = reveals[i].getBoundingClientRect().top;
+    let revealPoint = 120; // semakin kecil semakin cepat muncul
+
+    if (revealTop < windowHeight - revealPoint) {
+      reveals[i].classList.add("active");
     }
-  });
+  }
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll(); // biar elemen atas langsung tampil
+
+reveals.forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.15) + "s";
 });
 
-reveals.forEach((el) => observer.observe(el));
+
