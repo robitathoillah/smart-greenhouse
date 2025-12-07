@@ -15,3 +15,16 @@ if (backBtn) {
     hamburger.classList.remove("active");
   });
 }
+
+// SCROLL REVEAL
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+reveals.forEach((el) => observer.observe(el));
